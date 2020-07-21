@@ -218,7 +218,10 @@ A `identity` block supports the following:
 
 * `type` - (Required) The type of Managed Identity which should be assigned to the Linux Virtual Machine. Possible values are `SystemAssigned`, `UserAssigned` and `SystemAssigned, UserAssigned`.
 
-* `identity_ids` - (Optional) A list of User Managed Identity ID's which should be assigned to the Linux Virtual Machine.
+* `identity_ids` - (Optional) A list of User Managed Identity Resource ID's which should be assigned to the Linux Virtual Machine. For example:
+```
+/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user managed identity name>
+```
 
 ~> **NOTE:** This is required when `type` is set to `UserAssigned`.
 
