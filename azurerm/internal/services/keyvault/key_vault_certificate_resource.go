@@ -556,7 +556,7 @@ func resourceArmKeyVaultCertificateRead(d *schema.ResourceData, meta interface{}
 
 	certificateData := ""
 	if contents := cert.Cer; contents != nil {
-		certificateData = strings.ToUpper(hex.EncodeToString(*contents))
+		certificateData = base64.StdEncoding.EncodeToString(*contents)
 	}
 	d.Set("certificate_data", certificateData)
 
